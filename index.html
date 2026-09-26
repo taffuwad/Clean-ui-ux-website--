@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Baseline — Tennis Club &amp; Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<!-- Lenis via importmap (loaded below) -->
+<script type="importmap">
+{ "imports": { "lenis": "https://cdn.jsdelivr.net/npm/lenis@1.1.18/+esm" } }
+</script>
+</head>
+<body>
+
+<!-- ============ LOADER ============ -->
+<div class="loader" id="loader">
+  <div class="loader-mark" id="loaderMark">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9"/><path d="M4.8 5.6A9 9 0 0 0 4.8 18.4"/><path d="M19.2 5.6a9 9 0 0 1 0 12.8"/>
+    </svg>
+    <span>Baseline</span>
+  </div>
+  <div class="loader-track"><div class="loader-fill" id="loaderFill"></div></div>
+</div>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-plate">
+    <div class="hero-plate-inner" id="heroPlate">
+      <img src="https://api.getlayers.ai/storage/v1/object/public/public/assets/baseline-88535e4000/hero/hero-court.webp" alt="Player lunging for a shot on a hard court" fetchpriority="high">
+    </div>
+  </div>
+
+  <header class="site-header">
+    <nav class="header-left">
+      <a href="#programs">Programs &amp; Coaches</a>
+      <a href="#facilities">Club &amp; Events</a>
+    </nav>
+    <a class="header-brand" href="#top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9"/><path d="M4.8 5.6A9 9 0 0 0 4.8 18.4"/><path d="M19.2 5.6a9 9 0 0 1 0 12.8"/>
+      </svg>
+      <span>Baseline</span>
+    </a>
+    <div class="header-right">
+      <button class="header-cta" type="button" data-open-modal>Book a Visit</button>
+      <button class="burger" type="button" data-open-menu aria-label="Open menu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="hero-title-wrap">
+    <h1 id="hero-title">Own The Court</h1>
+  </div>
+
+  <div class="hero-bottom">
+    <p class="hero-tagline">
+      <span class="line-box"><span class="line-inner">Show Up,</span></span>
+      <span class="line-box"><span class="line-inner">Level Up</span></span>
+    </p>
+
+    <div class="hero-right">
+      <div class="collection-slider" id="collectionSlider">
+        <div class="collection-stage" id="collectionStage"></div>
+        <div class="dots" data-tone="light" id="collectionDots"></div>
+      </div>
+
+      <article class="membership-card" id="membershipCard">
+        <div class="membership-left">
+          <span class="membership-value">9K+</span>
+          <div class="avatars">
+            <span style="background:#5790e6"></span>
+            <span style="background:#c2e029"></span>
+            <span style="background:#0b6e97"></span>
+            <span style="background:#ffffff"></span>
+          </div>
+          <span class="membership-caption">Members on court</span>
+        </div>
+        <img class="membership-img" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/baseline-88535e4000/1.webp" alt="Player waiting to return on a clay court" loading="lazy">
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE STRIP ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
+    <span>Baseline</span><span>Tennis</span><span>Club</span><span>Academy</span>
+  </div>
+</div>
+
+<!-- ============ TRUST ============ -->
+<section class="trust" id="trust">
+  <div class="trust-top">
+    <div class="percent-badge" id="percentBadge">
+      <span class="percent-value">100%</span>
+      <span class="percent-caption">Coaching built around your game</span>
+    </div>
+    <article class="badge-card" id="badgeCard">
+      <span class="index-chip">#01</span>
+      <div>
+        <h3>Trusted by serious players</h3>
+        <p>From first-timers to nationally ranked juniors, players train here because the progress shows up on the scoreboard.</p>
+      </div>
+    </article>
+  </div>
+
+  <h2 class="ghost-heading" id="trustTitle">
+    <div class="ghost-row">
+      <span class="ghost-word"><span class="gw-inner">Expert</span></span>
+      <span class="ghost-word"><span class="gw-inner">Result-</span></span>
+    </div>
+    <div class="ghost-row">
+      <span class="ghost-word ink"><span class="gw-inner">Driven</span></span>
+      <span class="ghost-word"><span class="gw-inner">Coaching</span></span>
+    </div>
+  </h2>
+
+  <div class="coach-wrap">
+    <figure class="coach-card" id="coachCard">
+      <img class="coach-img" id="coachImgA" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/baseline-88535e4000/5.webp" alt="Head coach set in a ready stance on clay" loading="lazy">
+      <img class="coach-img" id="coachImgB" alt="" aria-hidden="true">
+      <figcaption class="coach-caption">
+        <span class="coach-name" id="coachName">Marco Vidal</span>
+        <span class="coach-role" id="coachRole">Head Coach</span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="trust-controls">
+    <button class="arrow-btn outline" id="trustPrev" type="button" aria-label="Previous coach">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="flip"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </button>
+    <div class="dots" data-tone="dark" id="trustDots"></div>
+    <button class="arrow-btn solid" id="trustNext" type="button" aria-label="Next coach">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </button>
+  </div>
+</section>
+
+<!-- ============ PROGRAMS ============ -->
+<section class="programs" id="programs">
+  <div class="eyebrow dark"><span class="eyebrow-dot"></span>Training programs</div>
+  <h2 class="stacked-title" id="programsTitle">
+    <span class="line-box"><span class="line-inner">Built for</span></span>
+    <span class="line-box"><span class="line-inner">every level</span></span>
+  </h2>
+
+  <ul class="program-list" id="programList">
+    <li><a class="program-row" href="#junior">
+      <span class="program-index">01</span>
+      <span class="program-body">
+        <span class="program-name">Junior Development</span>
+        <span class="program-desc">Fundamentals, footwork, and match play for ages 6–14.</span>
+      </span>
+      <span class="program-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a></li>
+    <li><a class="program-row" href="#performance">
+      <span class="program-index">02</span>
+      <span class="program-body">
+        <span class="program-name">Performance Squad</span>
+        <span class="program-desc">High-volume training for competitive and ranked players.</span>
+      </span>
+      <span class="program-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a></li>
+    <li><a class="program-row" href="#adult">
+      <span class="program-index">03</span>
+      <span class="program-body">
+        <span class="program-name">Adult Clinics</span>
+        <span class="program-desc">Small-group sessions to sharpen technique and fitness.</span>
+      </span>
+      <span class="program-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a></li>
+    <li><a class="program-row" href="#private">
+      <span class="program-index">04</span>
+      <span class="program-body">
+        <span class="program-name">Private Coaching</span>
+        <span class="program-desc">One-to-one sessions tailored to your goals and schedule.</span>
+      </span>
+      <span class="program-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a></li>
+  </ul>
+</section>
+
+<!-- ============ FACILITIES ============ -->
+<section class="facilities" id="facilities">
+  <div class="facilities-grid">
+    <div class="fac-intro">
+      <img class="fac-icon" id="facIcon" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/baseline-88535e4000/3.webp" alt="Player stretching for a forehand on clay" loading="lazy">
+      <h2 class="stacked-title" id="facilitiesTitle">
+        <span class="line-box"><span class="line-inner">Tour Our</span></span>
+        <span class="line-box"><span class="line-inner">World-Class</span></span>
+        <span class="line-box"><span class="line-inner">Courts</span></span>
+      </h2>
+      <p class="fac-body" id="facBody">Reserve a court for focused practice, squad drills, or private sessions — and train in the same conditions you'll compete in.</p>
+    </div>
+
+    <div class="court-cards">
+      <figure class="court-card" data-tone="clay">
+        <img src="https://api.getlayers.ai/storage/v1/object/public/public/assets/baseline-88535e4000/1.webp" alt="Player on the baseline of an outdoor clay court" loading="lazy">
+        <figcaption class="court-caption">
+          <span class="court-name">Redline Clay</span>
+          <span class="court-desc">A fast outdoor clay court tuned for long, physical rallies.</span>
+        </figcaption>
+      </figure>
+      <figure class="court-card" data-tone="blue">
+        <img src="https://api.getlayers.ai/storage/v1/object/public/public/assets/baseline-88535e4000/4.webp" alt="Player following through on a blue hard court" loading="lazy">
+        <figcaption class="court-caption">
+          <span class="court-name">Harbor Court</span>
+          <span class="court-desc">A sheltered hard court built for precision and night play.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats" id="stats">
+  <div class="eyebrow light"><span class="eyebrow-dot"></span>By the numbers</div>
+  <h2 class="stacked-title" id="statsTitle">
+    <span class="line-box"><span class="line-inner">A club that</span></span>
+    <span class="line-box"><span class="line-inner">keeps score</span></span>
+  </h2>
+
+  <dl class="stats-grid" id="statsGrid">
+    <div class="stat-cell"><dt class="sr-only">Certified coaches</dt><dd><span class="stat-value" data-count="24">0</span><span class="stat-label">Certified coaches</span></dd></div>
+    <div class="stat-cell"><dt class="sr-only">Championship courts</dt><dd><span class="stat-value" data-count="12">0</span><span class="stat-label">Championship courts</span></dd></div>
+    <div class="stat-cell"><dt class="sr-only">Members training</dt><dd><span class="stat-value" data-count="9000" data-suffix="K+">0</span><span class="stat-label">Members training</span></dd></div>
+    <div class="stat-cell"><dt class="sr-only">Years on the baseline</dt><dd><span class="stat-value" data-count="15">0</span><span class="stat-label">Years on the baseline</span></dd></div>
+  </dl>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="testimonials" id="testimonials">
+  <div class="eyebrow dark"><span class="eyebrow-dot"></span>What players say</div>
+  <h2 class="stacked-title" id="testimonialsTitle">
+    <span class="line-box"><span class="line-inner">Loved by</span></span>
+    <span class="line-box"><span class="line-inner">the locker room</span></span>
+  </h2>
+
+  <ul class="testimonial-list" id="testimonialList">
+    <li class="testimonial-card">
+      <div>
+        <div class="testimonial-quote">&ldquo;</div>
+        <blockquote>I added a level to my serve in one season. The coaching is detailed and it actually sticks.</blockquote>
+      </div>
+      <figcaption><span class="testimonial-name">Priya Anand</span><span class="testimonial-role">Performance Squad</span></figcaption>
+    </li>
+    <li class="testimonial-card">
+      <div>
+        <div class="testimonial-quote">&ldquo;</div>
+        <blockquote>Best courts in the city and a team that treats every member like a competitor.</blockquote>
+      </div>
+      <figcaption><span class="testimonial-name">Lukas Brenner</span><span class="testimonial-role">Adult Clinics</span></figcaption>
+    </li>
+    <li class="testimonial-card">
+      <div>
+        <div class="testimonial-quote">&ldquo;</div>
+        <blockquote>My daughter went from shy beginner to club champion. Worth every minute.</blockquote>
+      </div>
+      <figcaption><span class="testimonial-name">Dana Okafor</span><span class="testimonial-role">Parent, Junior Development</span></figcaption>
+    </li>
+  </ul>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" id="contact">
+  <div class="footer-cta">
+    <div>
+      <div class="eyebrow light"><span class="eyebrow-dot"></span>Get started</div>
+      <p class="footer-cta-title" id="footerCta">
+        <span class="line-box"><span class="line-inner">Ready to</span></span>
+        <span class="line-box"><span class="line-inner">play?</span></span>
+      </p>
+    </div>
+    <button class="pill-btn light" id="footerCtaBtn" type="button" data-open-modal>
+      Book a Visit
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </button>
+  </div>
+
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-brandmark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"/><path d="M4.8 5.6A9 9 0 0 0 4.8 18.4"/><path d="M19.2 5.6a9 9 0 0 1 0 12.8"/>
+        </svg>
+        <span>Baseline</span>
+      </div>
+      <p class="footer-blurb">A members' tennis club and academy where focused coaching meets championship courts.</p>
+      <address class="footer-address">
+        <a href="mailto:play@baseline.club">play@baseline.club</a>
+        <a href="tel:+12125550148">+1 (212) 555-0148</a>
+        <span class="muted">120 Court Lane, New York</span>
+      </address>
+    </div>
+
+    <nav class="footer-nav">
+      <h4>Programs</h4>
+      <ul>
+        <li><a href="#junior">Junior Development</a></li>
+        <li><a href="#performance">Performance Squad</a></li>
+        <li><a href="#adult">Adult Clinics</a></li>
+        <li><a href="#private">Private Coaching</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-nav">
+      <h4>Club</h4>
+      <ul>
+        <li><a href="#membership">Membership</a></li>
+        <li><a href="#facilities">Facilities</a></li>
+        <li><a href="#club">Events</a></li>
+        <li><a href="#shop">Pro Shop</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-nav">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#programs">Coaches</a></li>
+        <li><a href="#careers">Careers</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Baseline Tennis Club. All rights reserved.</span>
+    <nav class="footer-social">
+      <a href="#instagram">Instagram</a><a href="#x">X</a><a href="#youtube">YouTube</a><a href="#linkedin">LinkedIn</a>
+    </nav>
+    <nav class="footer-legal">
+      <a href="#privacy">Privacy</a><a href="#terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+
+</main>
+
+<!-- ============ MENU OVERLAY ============ -->
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="menu-backdrop" data-close-menu></div>
+  <div class="menu-panel" id="menuPanel">
+    <div class="menu-inner">
+      <div class="menu-top">
+        <div class="menu-brand">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/><path d="M4.8 5.6A9 9 0 0 0 4.8 18.4"/><path d="M19.2 5.6a9 9 0 0 1 0 12.8"/>
+          </svg>
+          <span>Baseline</span>
+        </div>
+        <button class="close-btn light" type="button" data-close-menu aria-label="Close menu" data-xrotate>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+
+      <nav class="menu-nav" id="menuNav">
+        <a class="menu-link" href="#programs" data-menu-link>Programs</a>
+        <a class="menu-link" href="#facilities" data-menu-link>Facilities</a>
+        <a class="menu-link" href="#testimonials" data-menu-link>Reviews</a>
+        <a class="menu-link" href="#contact" data-menu-link>Contact</a>
+      </nav>
+
+      <div class="menu-bottom">
+        <button class="pill-btn light" type="button" id="menuCta">
+          Book a Visit
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <nav class="menu-social">
+          <a href="#instagram">Instagram</a><a href="#x">X</a><a href="#youtube">YouTube</a><a href="#linkedin">LinkedIn</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CONTACT MODAL ============ -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-label="Book a visit">
+    <div class="modal-head">
+      <div>
+        <div class="eyebrow dark"><span class="eyebrow-dot"></span>Book a visit</div>
+        <h2 class="modal-title">
+          <span class="line-box"><span class="line-inner">Come see</span></span>
+          <span class="line-box"><span class="line-inner">the courts</span></span>
+        </h2>
+      </div>
+      <button class="close-btn dark" type="button" data-close-modal aria-label="Close" data-xrotate>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+
+    <form class="modal-form" id="modalForm" novalidate>
+      <label class="field">
+        <span class="field-label">Full name</span>
+        <input type="text" name="name" id="fieldName" placeholder="Alex Rivera" autocomplete="name">
+      </label>
+      <label class="field">
+        <span class="field-label">Email</span>
+        <input type="email" name="email" id="fieldEmail" placeholder="you@email.com" autocomplete="email">
+      </label>
+      <label class="field">
+        <span class="field-label">What would you like to play?</span>
+        <textarea name="message" id="fieldMessage" rows="3" placeholder="I'd love to try a private lesson on the clay courts…"></textarea>
+      </label>
+      <button class="submit-btn" type="submit" id="submitBtn">Request a visit</button>
+    </form>
+
+    <div class="modal-success" id="modalSuccess" hidden>
+      <span class="success-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+      </span>
+      <span class="success-title">Request received</span>
+      <span class="success-text" id="successText">Thanks, there — our team will be in touch to lock in your visit.</span>
+      <button class="pill-btn solid" type="button" data-close-modal>Done</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
